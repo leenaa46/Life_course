@@ -15,8 +15,8 @@ class CarController extends Controller
      */
     public function index()
     {
-        // $cars = Car::with('category')->get();
-        $cars = Car::whereRelation('category', 'name', 'car')->get();
+        $cars = Car::with('category')->get();
+        // $cars = Car::whereRelation('category', 'name', 'car')->get();
 
         return response()->json([
             'error' => false,
@@ -83,9 +83,12 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
+        // dd($car);
+        $employee = $car->employees;
+
         return response()->json([
             'error' => false,
-            'data' => $car
+            'data' => $employee
         ]);
     }
 }

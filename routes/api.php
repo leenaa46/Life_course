@@ -15,3 +15,5 @@ Route::apiResource('category', CategoryController::class);
 Route::get('category/{category}/car', [CategoryController::class, 'getCar']);
 Route::apiResource('car', CarController::class);
 Route::apiResource('employee', EmployeeController::class);
+Route::post('employee/{employee}/car', [EmployeeController::class, 'addCar']);
+Route::get('employee/{employee}/car', [EmployeeController::class, 'getCar']);

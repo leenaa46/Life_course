@@ -91,4 +91,34 @@ class EmployeeController extends Controller
             'data' => $employee
         ]);
     }
+
+    /**
+     * Create Employee.
+     *
+     * @return json
+     */
+    public function AddCar(Request $request, Employee $employee)
+    {
+        $employee->cars()->attach($request->car_id);
+
+        return response()->json([
+            'error' => false,
+            'data' => $employee
+        ]);
+    }
+
+    /**
+     * Create Employee.
+     *
+     * @return json
+     */
+    public function getCar(Employee $employee)
+    {
+        $cars = $employee->cars;
+
+        return response()->json([
+            'error' => false,
+            'data' => $cars
+        ]);
+    }
 }
