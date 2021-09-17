@@ -85,4 +85,19 @@ class CategoryController extends Controller
             'data' => $category
         ]);
     }
+
+    /**
+     * Create Category.
+     *
+     * @return json
+     */
+    public function getCar(Category $category)
+    {
+        $cars = $category->cars;
+
+        return response()->json([
+            'error' => false,
+            'data' => $cars
+        ]);
+    }
 }

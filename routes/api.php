@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,3 +11,5 @@ use Illuminate\Support\Facades\Route;
 // Route::get('category/{category}', [CategoryController::class, 'show']);
 
 Route::apiResource('category', CategoryController::class);
+Route::get('category/{category}/car', [CategoryController::class, 'getCar']);
+Route::apiResource('car', CarController::class);
