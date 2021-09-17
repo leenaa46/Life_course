@@ -32,6 +32,9 @@ class EmployeeController extends Controller
     {
         $employee = new Employee();
         $employee->name = $request->name;
+        $employee->surname = $request->surname;
+        $employee->dob = $request->dob;
+        $employee->gender = $request->gender;
         $employee->save();
 
         return response()->json([
@@ -49,6 +52,9 @@ class EmployeeController extends Controller
     {
         // $employee =  Employee::findOrFail($id);
         $employee->name = $request->name;
+        $employee->surname = $request->surname;
+        $employee->dob = $request->dob;
+        $employee->gender = $request->gender;
         $employee->save();
 
         return response()->json([

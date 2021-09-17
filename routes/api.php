@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('category', [CategoryController::class, 'index']);
@@ -13,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('category', CategoryController::class);
 Route::get('category/{category}/car', [CategoryController::class, 'getCar']);
 Route::apiResource('car', CarController::class);
+Route::apiResource('employee', EmployeeController::class);
